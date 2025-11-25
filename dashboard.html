@@ -1,0 +1,61 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Task Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="logoutBtn">Logout</button>
+
+  <h2>Add Task</h2>
+  <form id="taskForm">
+    <input type="text" id="title" placeholder="Title" required>
+    <input type="text" id="description" placeholder="Description" required>
+    <select id="priority" required>
+      <option value="">Priority</option>
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+    <input type="date" id="dueDate" required>
+    <select id="status" required>
+      <option value="Pending">Pending</option>
+      <option value="Completed">Completed</option>
+    </select>
+    <button type="submit">Save Task</button>
+  </form>
+
+  <h3>Filters</h3>
+  <select id="filterStatus">
+    <option value="">All Status</option>
+    <option value="Pending">Pending</option>
+    <option value="Completed">Completed</option>
+  </select>
+
+  <select id="filterPriority">
+    <option value="">All Priority</option>
+    <option value="High">High</option>
+    <option value="Medium">Medium</option>
+    <option value="Low">Low</option>
+  </select>
+
+  <input type="date" id="filterDate">
+
+  <input type="text" id="searchInput" placeholder="Search..." />
+
+  <h3>Tasks</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th><th>Description</th><th>Priority</th>
+        <th>Due Date</th><th>Status</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="taskTableBody"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
